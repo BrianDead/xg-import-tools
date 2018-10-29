@@ -364,6 +364,8 @@ def shouldIInclude(epGroup):
     # Returns True or False accordingly
 
     # Only include groups from the 'Optimize' or 'Allow' category
+    # See http://aka.ms/pnc for Microsoft recommendations per-category
+    # They say the 'Default' category should not require special treatment
     if epGroup['category'] not in ('Optimize', 'Allow'):
         return False
 
@@ -373,8 +375,11 @@ def shouldIInclude(epGroup):
         return False
 
     # Only include groups relating to tcp ports 443 or 80
-    ports = str(epGroup['tcpPorts'])
-    if (ports.find('443') < 0 and ports.find('80') < 0):
+    try:
+        ports = str(epGroup['tcpPorts'])
+        if (ports.find('443') < 0 and ports.find('80') < 0):
+            return False
+    except KeyError:
         return False
 
     return True
