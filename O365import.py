@@ -75,9 +75,6 @@ def getArguments():
         '-o', '--optional', help="Include 'required = false' entries" +
         " from the MS list", action='store_true')
     parser.add_argument(
-        '-6', '--ipv6',
-        help="Include IPv6 objects & rules", action='store_true')
-    parser.add_argument(
         '-s', '--securitypolicy',
         help="Create/update a firewall rule using allowing all the " +
         " created network address objects", action='store_true')
