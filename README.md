@@ -1,5 +1,5 @@
 # xg-import-tools
-Some tools to help import config into a Sophos XG Firewall
+Some **unofficial** tools to help import config into a Sophos XG Firewall
 
 # O365import.py
 Fetches Microsoft Office365 Endpoint data from their web service API and uses it to create objects and definitions on an XG firewall to skip filtering/scanning for the traffic.
